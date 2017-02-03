@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Videre</title>
+
+    <link rel="stylesheet" href="/styles/vendors/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/styles/app/style.css"/>
+</head>
+
+<body>
+<!--Input roomName-->
+<input type="hidden" class="form-control" id="ha-roomName" value="<%= roomCode %>">
+
+<!--Local video muted -->
+<video id="ha-video" autoplay muted="true"></video>
+
+<!--Remote video -->
+<video id="ha-remote-video" autoplay></video>
+
+<!-- Chat -->
+<div class="panel panel-default" id="ha-chat">
+    <div class="panel-heading">
+        <h3 class="panel-title">Chat</h3>
+    </div>
+    <div class="panel-body" id="ha-messagesContainer"></div>
+    <div class="panel-footer">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control input-sm" id="ha-inputMessage" placeholder="Send a message">
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-sm btn-ha" id="ha-sendMessage">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Spinner to wait for connection -->
+<img id="ha-spinner" src="/images/spinner.gif" alt="Spinner">
+
+<!--Button to start a call -->
+<a class="btn btn-lg btn-ha" id="ha-btnCall" title="Call"><span class="glyphicon glyphicon-earphone"></span></a>
+<!--Button to mute the myc -->
+<a class="btn btn-lg btn-ha" id="ha-btnMute" title="Mute"><span class="glyphicon glyphicon-volume-up"></span></a>
+<!--Button to chat -->
+<a class="btn btn-lg btn-ha" id="ha-btnChat" title="Chat"><span class="glyphicon glyphicon-edit"></span></a>
+<!--Button to stop a call-->
+<a class="btn btn-lg btn-ha" id="ha-btnStop" title="Hang up"><span class="glyphicon glyphicon-remove-sign"></span></a>
+<!--Button to switch on full screen -->
+<a class="btn btn-lg btn-ha" id="ha-btnFullScreen" title="Full Screen"><span class="glyphicon glyphicon-fullscreen"></span></a>
+
+<a class="btn btn-lg btn-ha" id="ha-btnChangeCamera" title="Change Camera">
+    <span class="glyphicon glyphicon-retweet"></span>
+    <select id="selectCamera" style="display: none;"></select>
+</a>
+
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/adapter.js"></script>
+
+<script src="/js/app/chat.js"></script>
+</html>

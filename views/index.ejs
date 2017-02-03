@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Videre</title>
+
+        <link rel="stylesheet" href="/styles/app/dbjs-ui-flexbox.css"/>
+        <link rel="stylesheet" href="/styles/app/style.css"/>
+    </head>
+    <body>
+        <input id="url" type="hidden" value="<%= url %>" />
+        <div id="body">
+            <div id="mail-container" >
+                <div id="mail-form-container" class="flex-wrap justify-center">
+                    <div class="item basis-12 flex-wrap justify-center">
+                        <div class="item basis-4">
+                            <h1>Send Mail</h1>
+                        </div>
+                    </div>
+                    <div class="item basis-12 flex-wrap justify-center">
+                        <div class="item basis-4">
+                            <form id="mailForm" name="mailForm" onsubmit="senMail(event);">
+                                <div class="input">
+                                    <input id="to" type="text" name="to" placeholder="To" autocomplete="off" autofocus required />
+                                </div>
+
+                                <div class="button">
+                                    <button type="submit">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/app/index.js"></script>
+    </body>
+</html>
